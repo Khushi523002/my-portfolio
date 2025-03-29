@@ -1,0 +1,137 @@
+/* Projects Section */
+#projects {
+    background-color: #E8DFCE;
+    padding: 80px 10%;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+/* Heading */
+#projects h2 {
+    font-size: 36px; /* Consistent with other sections */
+    color: #CB8655; /* Warm Brown */
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+#projects h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #CB8655;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Project Card */
+.project-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    width: 300px;
+    height:auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+    text-align: center;
+    border-left: 5px solid #CB8655; /* Accent border */
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Fade-in Animation */
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Icon */
+.project-icon {
+    font-size: 32px;
+    color: #CB8655;
+}
+
+/* Project Title */
+.project-card h3 {
+    font-size: 24px;
+    margin: 12px 0;
+    color: #CB8655;
+}
+
+/* Project Description */
+.project-card p {
+    font-size: 16px;
+    color: #7E8E65;
+    line-height: 1.5;
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Tech Stack Items */
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #F4F4F4;
+    border-radius: 8px;
+    padding: 12px;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+.tech-item:hover {
+    transform: scale(1.1);
+    background: #E0D4BF;
+}
+
+/* Tech Stack Icons */
+.tech-item img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Tech Stack Name */
+.tech-name {
+    font-size: 10px;
+    color: #5A6B45;;
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        width: 90%;
+    }
+
+    #projects h2 {
+        font-size: 32px;
+    }
+}

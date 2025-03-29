@@ -1,0 +1,75 @@
+/* Skills.css */
+#skills {
+    background-color: #E8DFCE;
+    padding: 80px 10%;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 36px; /* Consistent with other sections */
+    color: #CB8655; /* Warm Brown */
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+#skills h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #CB8655;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Project Card */
+.skill-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    border-left: 5px solid #CB8655; /* Accent border */
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card h3 {
+    font-size: 24px;
+    margin: 12px 0;
+    color: #CB8655;
+}
+
+.skill-card p {
+    font-size: 16px;
+    color: #7E8E65;
+    line-height: 1.5;
+}
+
+  @media (max-width: 768px) {
+    .skill-card {
+      width: 90%;
+    }
+  
+    h2 {
+      font-size: 32px;
+    }
+  }

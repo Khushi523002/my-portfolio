@@ -1,0 +1,16 @@
+/* Common Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E8DFCE; /* Light Beige */
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    width: auto;
+    height: auto;
+    background: url("/public/bgimg3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center center; */
+    background-attachment: fixed;
+
+}

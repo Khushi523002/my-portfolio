@@ -1,0 +1,45 @@
+#contact {
+    background-color: #E8DFCE;
+    padding: 20px 10%;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+    background: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#contact h2 {
+    font-size: 32px;
+    color: #B67352; /* Warm Brown */
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #5D675B; /* Muted Green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #5D675B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #5A6B45;
+}
+
+.icon {
+    font-size: 22px;
+    color: #B67352;
+}

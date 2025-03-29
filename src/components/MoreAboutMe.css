@@ -1,0 +1,66 @@
+/* About Section */
+#about {
+    background-color: #E8DFCE;
+    padding: 80px 10%; /* Increased padding for better spacing */
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 36px; /* Increased to match the Introduction section */
+    color: #CB8655; /* Warm Brown */
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+#about h2::after {
+    content: "";
+    display: block;
+    width: 60px; /* Slightly wider for emphasis */
+    height: 4px;
+    background: #CB8655;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#about p {
+    font-size: 20px; /* Increased for better readability */
+    color: #5A6B45; /* Darker Olive Green */
+    font-weight: 500;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.7;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 5%;
+    }
+
+    #about h2 {
+        font-size: 32px;
+    }
+
+    #about p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}

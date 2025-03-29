@@ -1,0 +1,86 @@
+/* Introduction.css */
+#introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 100px 10%;
+  background-color: #E8DFCE;
+  min-height: 60vh;
+
+}
+
+#introduction div {
+  max-width: px;
+}
+
+#introduction h1 {
+  font-size: 38px; /* Slightly bigger for emphasis */
+  color: #CB8655; /* Warm Brown */
+  font-weight: bold;
+  text-transform: uppercase; /* Adds uniformity */
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+#introduction p {
+  font-size: 20px; /* Increased for better readability */
+  color: #5A6B45; /* Darker Olive Green */
+  font-weight: 500;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+#introduction img {
+  width: 280px;
+  height: 370px;
+  /* border-radius: 50%;
+  object-fit:contain;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  border: 5px solid #CB8655; */
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInZoom 1s ease 0.6s forwards;
+  
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #introduction {
+      flex-direction: column;
+      text-align: center;
+      padding: 80px 5%;
+  }
+
+  #introduction h1 {
+      font-size: 32px; /* Adjusting for smaller screens */
+  }
+
+  #introduction p {
+      font-size: 18px;
+  }
+
+  #introduction img {
+      width: 200px;
+      height: 200px;
+  }
+}

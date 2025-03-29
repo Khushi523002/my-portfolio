@@ -1,0 +1,19 @@
+/* 🔥 Scroll Indicator Container */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Thin line */
+    background: rgba(0, 0, 0, 0.1); /* Light BG */
+    z-index: 9999;
+  }
+  
+  /* 🚀 Progress Bar Animation */
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #cb8655; /* Your theme color */
+    transition: width 0.2s ease-out; /* Smooth animation */
+  }
+  
