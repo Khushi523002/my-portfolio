@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,108 +5,63 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 90px; /* Space for navbar */
-  /* 🔥 Custom Scrollbar */
-
-  scrollbar-width: none; /* Firefox ke liye hide */
-  overflow-x: hidden; /* Horizontal scroll disable by default */
+  padding-top: 90px;
+  scrollbar-width: thin; /* Firefox support */
+  scrollbar-color: var(--warm-brown) var(--cream); /* Firefox support */
+  overflow-x: hidden;
+  background-color: var(--cream);
 }
 
-/* 🏆 Scrollbar Track */
+/* 🍂 Cozy Scrollbar Track */
 ::-webkit-scrollbar {
-  width: 8px; /* Thin scrollbar */
-  height: 8px; /* Horizontal scrollbar height */
-  position: absolute;
-  top: 0; /* Scrollbar upar le jaane ka magic */
+  width: 8px;
+  height: 8px;
 }
 
-/* 🎗 Scrollbar background */
+/* 🧴 Cream-colored track */
 ::-webkit-scrollbar-track {
-  background: #e8dfce; /* Light aesthetic background */
+  background: var(--cream);
+  border-left: 1px solid rgba(167, 138, 127, 0.1);
 }
 
-/* 🚀 Scrollbar thumb (moving part) */
+/* 🍁 Warm Brown Thumb */
 ::-webkit-scrollbar-thumb {
-  background: #cb8655; /* Aesthetic brown */
-  border-radius: 10px; /* Smooth round look */
+  background: var(--warm-brown);
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* 💡 Hover effect for better UX */
+/* ☕ Hover Effect - Darker Brown */
 ::-webkit-scrollbar-thumb:hover {
-  background: #7e8e65; /* Darker on hover */
+  background: var(--warm-brown-dark);
+  transform: scaleX(1.1);
 }
 
+/* 📱 Active State - Pressed Effect */
+::-webkit-scrollbar-thumb:active {
+  background: var(--warm-brown-darker);
+}
+
+/* ✨ Smooth Transition for All Elements */
+* {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  background-color: rgba(167, 138, 127, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: var(--warm-brown-darker);
 }
 
-#container2 {
-  background-color: #E8DFCE;
-  padding: 10px 10%;
-  text-align: center;
+/* Add these to your root variables */
+:root {
+  --cream: #F5F0E6;
+  --warm-brown: #A78A7F;
+  --warm-brown-dark: #8B5A2B;
+  --warm-brown-darker: #6B4D3D;
 }
-.social-section, .resume-section {
-  text-align: center;
-  margin: 20px auto;
-  padding: 10px;
-  border-radius: 12px;
-  background: white;
-  color: #cb8655;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-}
-
-.social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-}
-
-.social-btn {
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-
-}
-
-.github {
-  background: #333;
-  color: white;
-}
-
-.linkedin {
-  background: #0077b5;
-  color: white;
-}
-
-.social-btn:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
-}
-
-.resume-btn {
-  text-decoration: none;
-  background: #cb8655;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-size: 18px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-}
-
-.resume-btn:hover {
-  background: #7e8e65;
-  transform: scale(1.05);
-}
-

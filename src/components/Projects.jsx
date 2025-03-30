@@ -56,44 +56,63 @@ const projects = [
 
 const Projects = () => {
   useEffect(() => {
-    const cards = document.querySelectorAll(".project-card");
-  
-    const checkVisibility = () => {
+    const animateProjects = () => {
+      const cards = document.querySelectorAll('.project-card');
       const triggerBottom = window.innerHeight * 0.85;
-  
-      cards.forEach((card) => {
+
+      cards.forEach(card => {
         const cardTop = card.getBoundingClientRect().top;
         if (cardTop < triggerBottom) {
-          card.classList.add("show");
+          card.classList.add('visible');
         }
       });
     };
-  
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Run on load
-  
+
+    window.addEventListener('scroll', animateProjects);
+    animateProjects(); // Run once on load
+
     return () => {
-      window.removeEventListener("scroll", checkVisibility);
+      window.removeEventListener('scroll', animateProjects);
     };
   }, []);
-  
+
   return (
-    <section id="projects">
-      <h2>Projects</h2>
-      <div className="projects-container">
+    <section id="projects" className="projects-section">
+      <h2 className="section-title">
+        <span className="title-underline">Projects</span>
+      </h2>
+      
+      <div className="projects-grid">
         {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <span className="project-icon">{project.icon}</span>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
+          <div 
+            key={index}
+            className="project-card"
+            style={{ transitionDelay: `${index * 0.1}s` }}
+          >
+            <div className="card-header">
+              <span className="project-icon">{project.icon}</span>
+              <h3 className="project-title">{project.title}</h3>
+            </div>
+            
+            <p className="project-description">{project.description}</p>
+            
             <div className="tech-stack">
               {project.techStack.map((tech, i) => (
-                <div key={i} className="tech-item">
-                  <img src={tech.logo} alt={tech.name} title={tech.name} />
-                  <span className="tech-name">{tech.name}</span>
+                <div 
+                  key={i}
+                  className="tech-item"
+                  data-tooltip={tech.name}
+                >
+                  <img 
+                    src={tech.logo} 
+                    alt={tech.name}
+                    className="tech-logo"
+                  />
                 </div>
               ))}
             </div>
+            
+            <div className="card-decoration"></div>
           </div>
         ))}
       </div>

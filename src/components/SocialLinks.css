@@ -1,19 +1,8 @@
-/* Minimalist Cozy Contact Section */
-.contact-section {
+/* Minimalist Cozy Social Links Section */
+.social-section {
     background-color: var(--cream);
-    padding: 100px 10%;
+    padding: 80px 10%;
     position: relative;
-  }
-  
-  .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--cozy-paper);
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    position: relative;
-    overflow: hidden;
   }
   
   .section-title {
@@ -46,40 +35,53 @@
     width: 100px;
   }
   
-  .contact-cards {
+  .social-container {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
-  .contact-card {
+  .social-card {
+    background: var(--cozy-paper);
+    border-radius: 12px;
+    padding: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding: 1.5rem;
-    border-radius: 8px;
+    text-decoration: none;
     transition: all 0.4s ease;
-    background: var(--cream);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    flex: 1;
+    max-width: 250px;
   }
   
-  .contact-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  .social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   }
   
-  .contact-icon {
+  .social-icon {
     position: relative;
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    color: var(--warm-brown);
-    background: var(--cream);
+    font-size: 1.5rem;
     border-radius: 50%;
-    border: 1px solid var(--warm-brown);
     flex-shrink: 0;
+  }
+  
+  .github-card .social-icon {
+    background: rgba(51, 51, 51, 0.1);
+    color: #333;
+  }
+  
+  .linkedin-card .social-icon {
+    background: rgba(0, 119, 181, 0.1);
+    color: #0077b5;
   }
   
   .icon-halo {
@@ -89,12 +91,19 @@
     right: -5px;
     bottom: -5px;
     border-radius: 50%;
-    border: 1px solid var(--warm-brown);
     opacity: 0;
     transition: all 0.4s ease;
   }
   
-  .contact-card:hover .icon-halo {
+  .github-card .icon-halo {
+    border: 1px solid #333;
+  }
+  
+  .linkedin-card .icon-halo {
+    border: 1px solid #0077b5;
+  }
+  
+  .social-card:hover .icon-halo {
     opacity: 0.3;
     top: -8px;
     left: -8px;
@@ -102,52 +111,54 @@
     bottom: -8px;
   }
   
-  .contact-link {
-    font-size: 1.1rem;
-    color: var(--text);
-    text-decoration: none;
+  .social-content {
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    position: relative;
+    justify-content: space-between;
   }
   
-  .contact-link:hover {
-    color: var(--warm-brown);
+  .social-content span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text);
   }
   
-  .send-icon, .call-icon {
+  .github-card .social-content span {
+    color: #333;
+  }
+  
+  .linkedin-card .social-content span {
+    color: #0077b5;
+  }
+  
+  .arrow-icon {
+    font-size: 0.9rem;
     opacity: 0;
     transform: translateX(-5px);
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+    color: var(--warm-brown);
   }
   
-  .contact-link:hover .send-icon,
-  .contact-link:hover .call-icon {
+  .social-card:hover .arrow-icon {
     opacity: 1;
     transform: translateX(0);
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .contact-section {
-      padding: 80px 5%;
+    .social-section {
+      padding: 60px 5%;
     }
     
-    .contact-container {
-      padding: 2rem;
-    }
-    
-    .contact-card {
+    .social-container {
       flex-direction: column;
-      text-align: center;
-      gap: 1rem;
+      align-items: center;
     }
     
-    .contact-link {
-      flex-direction: column;
+    .social-card {
+      max-width: 100%;
+      width: 100%;
     }
     
     .section-title {

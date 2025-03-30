@@ -1,19 +1,51 @@
-/* 🔥 Scroll Indicator Container */
+/* Minimalist Cozy Scroll Indicator */
 .scroll-indicator {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px; /* Thin line */
-    background: rgba(0, 0, 0, 0.1); /* Light BG */
-    z-index: 9999;
-  }
-  
-  /* 🚀 Progress Bar Animation */
-  .progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #cb8655; /* Your theme color */
-    transition: width 0.2s ease-out; /* Smooth animation */
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.scroll-indicator.visible {
+  opacity: 1;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  position: relative;
+  transition: width 0.1s linear;
+  background: linear-gradient(
+    to right,
+    var(--warm-brown),
+    var(--warm-brown-light)
+  );
+}
+
+.progress-knob {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--warm-brown);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator.visible .progress-knob {
+  opacity: 1;
+}
+
+/* Add these to your root variables */
+:root {
+  --warm-brown: #A78A7F;
+  --warm-brown-light: #C4A484;
+}

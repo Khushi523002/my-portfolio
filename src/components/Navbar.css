@@ -1,81 +1,124 @@
-/* Navbar.css */
+/* Navbar.css - Right Slide Menu */
+:root {
+  --cream: #F5F0E6;
+  --warm-brown: #A78A7F;
+  --olive: #6B7D6D;
+  --text: #3A2D28;
+  --menu-width: 70%; /* Adjust width as needed */
+}
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #E8DFCE; /* Background color */
-  padding: 10px 10%;
+  background-color: var(--cream);
+  padding: 15px 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensures navbar stays on top */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 nav h1 {
-  font-size: 24px;
-  color: #CB8655; /* Warm Brown */
-  font-weight: bold;
+  font-size: 22px;
+  color: var(--warm-brown);
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
-nav ul {
+/* Desktop Menu */
+.nav-menu {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 25px;
   margin-right: 150px;
   padding-right: 50px;
+  transition: all 0.4s ease-out;
 }
 
-nav ul li a {
+.nav-menu li a {
   text-decoration: none;
-  color: #7E8E65; /* Olive Green */
-  font-size: 18px;
-  transition: color 0.3s ease;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 300;
+  position: relative;
+  padding-bottom: 2px;
 }
 
-nav ul li a:hover {
-  color: #CB8655;
+/* Underline Animation */
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: var(--warm-brown);
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
 }
 
 /* Hamburger Menu */
 .hamburger {
   display: none;
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
   background: none;
   border: none;
-  color: #7E8E65;
+  color: var(--warm-brown);
+  transition: transform 0.3s;
+  z-index: 1001;
 }
 
+.hamburger:hover {
+  transform: rotate(90deg);
+}
+
+/* Mobile Styles */
 @media (max-width: 786px) {
   nav {
-      padding: 10px 5%;
+    padding: 15px 5%;
   }
 
-  nav ul {
-      display: none; /* Hide menu initially */
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: #E8DFCE;
-      width: 100%;
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: var(--menu-width);
+    height: 100vh;
+    margin: 0;
+    padding: 80px 20px 20px;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease-out;
   }
 
-  nav ul.active {
-      display: flex; /* Show when active */
+  .nav-menu.active {
+    right: 0;
   }
 
-  nav ul li {
-      padding: 10px 0;
+  .nav-menu li {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-menu li a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
   }
 
   .hamburger {
-      display: block; /* Show only on small screens */
-      padding-right: 40px;
+    display: block;
+    padding-right: 20px;
   }
 }

@@ -1,66 +1,116 @@
-/* About Section */
-#about {
-    background-color: #E8DFCE;
-    padding: 80px 10%; /* Increased padding for better spacing */
-    padding-bottom: 30px;
+/* Minimalist Cozy About Section */
+.about-section {
+    background-color: var(--cream);
+    padding: 100px 10%;
+    position: relative;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-title {
+    font-size: 2.2rem;
+    color: var(--text);
+    font-weight: 500;
     text-align: center;
-}
-
-#about h2 {
-    font-size: 36px; /* Increased to match the Introduction section */
-    color: #CB8655; /* Warm Brown */
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .title-decoration {
     position: relative;
     display: inline-block;
-}
-
-#about h2::after {
-    content: "";
-    display: block;
-    width: 60px; /* Slightly wider for emphasis */
-    height: 4px;
-    background: #CB8655;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-#about p {
-    font-size: 20px; /* Increased for better readability */
-    color: #5A6B45; /* Darker Olive Green */
-    font-weight: 500;
-    max-width: 750px;
-    margin: 0 auto;
-    line-height: 1.7;
-    animation: fadeInUp 1s ease-in-out;
-}
-
-/* Smooth Fade-In Animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    padding-bottom: 8px;
+  }
+  
+  .title-decoration::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--warm-brown);
+    transition: width 0.4s ease;
+  }
+  
+  .about-title:hover .title-decoration::after {
+    width: 100px;
+  }
+  
+  .about-card {
+    background: var(--cozy-paper);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .interactive-elements {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2rem;
+  }
+  
+  .cozy-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--warm-brown);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+  }
+  
+  .about-card:hover .cozy-dot {
+    transform: translateY(-3px);
+    opacity: 0.8;
+  }
+  
+  .cozy-dot:nth-child(1) { animation: float 3s ease-in-out infinite; }
+  .cozy-dot:nth-child(2) { animation: float 3s ease-in-out 0.5s infinite; }
+  .cozy-dot:nth-child(3) { animation: float 3s ease-in-out 1s infinite; }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 80px 5%;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .about-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
     }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #about {
-        padding: 60px 5%;
+    
+    .about-card {
+      padding: 1.8rem;
     }
-
-    #about h2 {
-        font-size: 32px;
+    
+    .about-text {
+      font-size: 1rem;
     }
-
-    #about p {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-}
+  }

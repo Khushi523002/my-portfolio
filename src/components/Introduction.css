@@ -1,86 +1,179 @@
-/* Introduction.css */
+/* Minimalist Cozy Introduction */
 #introduction {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 50px;
-  padding: 100px 10%;
-  background-color: #E8DFCE;
-  min-height: 60vh;
-
+  justify-content: space-between;
+  gap: 5%;
+  padding: 120px 10%;
+  background-color: var(--cream);
+  min-height: 80vh;
 }
 
-#introduction div {
-  max-width: px;
+.intro-text {
+  max-width: 600px;
 }
 
 #introduction h1 {
-  font-size: 38px; /* Slightly bigger for emphasis */
-  color: #CB8655; /* Warm Brown */
-  font-weight: bold;
-  text-transform: uppercase; /* Adds uniformity */
-  letter-spacing: 1px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-#introduction p {
-  font-size: 20px; /* Increased for better readability */
-  color: #5A6B45; /* Darker Olive Green */
+  font-size: 2.8rem;
+  color: var(--text);
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 1s ease 0.3s forwards;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-#introduction img {
-  width: 280px;
-  height: 370px;
-  /* border-radius: 50%;
-  object-fit:contain;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-  border: 5px solid #CB8655; */
+.name-highlight {
+  color: var(--warm-brown);
+  position: relative;
+  display: inline-block;
+}
+
+.name-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--warm-brown);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+#introduction h1:hover .name-highlight::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.intro-subtext {
+  font-size: 1.2rem;
+  color: var(--text);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
   opacity: 0;
-  transform: scale(0.9);
-  animation: fadeInZoom 1s ease 0.6s forwards;
-  
+  animation: fadeInUp 0.8s ease 0.3s forwards;
+}
+
+.cozy-btn {
+  background: transparent;
+  color: var(--warm-brown);
+  border: 1px solid var(--warm-brown);
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+.cozy-btn:hover {
+  background: var(--warm-brown);
+  color: var(--cream);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(167, 138, 127, 0.2);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.cozy-btn:hover .btn-icon {
+  transform: translateX(3px);
+}
+
+.photo-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInZoom 0.8s ease 0.9s forwards;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.02);
+}
+
+.photo-border {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--warm-brown);
+  border-radius: 8px;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.1s forwards;
 }
 
 /* Animations */
 @keyframes fadeInUp {
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeInZoom {
   to {
-      opacity: 1;
-      transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 0.5;
   }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   #introduction {
-      flex-direction: column;
-      text-align: center;
-      padding: 80px 5%;
+    flex-direction: column-reverse;
+    padding: 80px 5%;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .intro-text {
+    max-width: 100%;
   }
 
   #introduction h1 {
-      font-size: 32px; /* Adjusting for smaller screens */
+    font-size: 2rem;
   }
 
-  #introduction p {
-      font-size: 18px;
+  .intro-subtext {
+    font-size: 1rem;
   }
 
-  #introduction img {
-      width: 200px;
-      height: 200px;
+  .photo-container {
+    width: 220px;
+    height: 300px;
+  }
+
+  .cozy-btn {
+    margin: 0 auto;
   }
 }
